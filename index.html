@@ -900,26 +900,6 @@ td.current-round-cell {
             <h1 id="match-title" contenteditable="true">مباراة تمهيدية</h1>
         </div>
 
-        <!-- شريط اختبار تحديث GitHub Pages: علامة واضحة للتحقق من تحديث أيقونة الشاشة الرئيسية -->
-        <section id="github-update-test" aria-label="اختبار تحديث التطبيق" style="
-            margin:12px; padding:14px 16px; border:2px solid #cfa963; border-radius:14px;
-            background:linear-gradient(135deg,#fff7e5,#ffffff); color:#1b1b1b;
-            display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;
-            box-shadow:0 6px 18px rgba(207,169,99,.18); direction:rtl;">
-            <div style="flex:1; min-width:180px;">
-                <div style="font-size:16px;font-weight:900;">🧪 اختبار تحديث أيقونة الشاشة الرئيسية</div>
-                <div style="font-size:13px;margin-top:4px;">علامة اختبار: GH-PAGES-UPDATE-131026-B7</div>
-                <div id="github-update-test-status" role="status" aria-live="polite" style="font-size:13px;margin-top:5px;color:#7b5b1d;">
-                    إذا ظهر هذا الشريط داخل الأيقونة، فقد وصل تحديث الملف.
-                </div>
-            </div>
-            <button id="github-update-test-btn" type="button" style="
-                border:0; border-radius:10px; padding:11px 15px; font-family:inherit; font-size:14px;
-                font-weight:800; cursor:pointer; background:#cfa963; color:#1b1b1b;">
-                تأكيد ظهور التحديث
-            </button>
-        </section>
-
         <div class="match-meta">
             <div class="meta-item meta-item-timer">
                 <span class="meta-label">⏱️ مدة المباراة</span>
@@ -1945,20 +1925,6 @@ async function exportAsImage() {
   }, 'image/png');
 }
 
-
-    // وظيفة اختبار فقط: لا تغيّر بيانات المباراة أو التخزين المحلي.
-    const githubUpdateTestBtn = document.getElementById('github-update-test-btn');
-    if (githubUpdateTestBtn) {
-        githubUpdateTestBtn.addEventListener('click', () => {
-            const status = document.getElementById('github-update-test-status');
-            if (status) {
-                status.textContent = '✅ التحديث ظاهر ويستجيب — ' + new Date().toLocaleString('ar-OM');
-                status.style.color = '#2e7d32';
-            }
-            githubUpdateTestBtn.textContent = 'تم التحقق ✓';
-            githubUpdateTestBtn.style.background = '#d8f3dc';
-        });
-    }
 
     loadState();
 
